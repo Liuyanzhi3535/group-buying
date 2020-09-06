@@ -1,0 +1,22 @@
+.container {
+  height: 100%;
+}
+
+.mat-drawer-content {
+  position: relative;
+  z-index: 1;
+  display: block;
+  height: 100%;
+  overflow: auto;
+}
+
+.sidenav-inner-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.sidenav-body-content {
+  display: flex;
+  flex: 1 1 auto;
+}
