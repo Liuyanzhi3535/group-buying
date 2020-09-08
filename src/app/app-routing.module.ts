@@ -6,7 +6,24 @@ const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
+    children: [
+      {
+        path: 'merchant',
+        loadChildren: () =>
+          import('./merchant/merchant.module').then(
+            (mod) => mod.MerchantModule
+          ),
+      },
+      {
+        path: 'activity',
+        loadChildren: () =>
+          import('./activity/activity.module').then(
+            (mod) => mod.ActivityModule
+          ),
+      },
+    ],
   },
+  { path: '**', redirectTo: '' },
 ];
 
 @NgModule({
