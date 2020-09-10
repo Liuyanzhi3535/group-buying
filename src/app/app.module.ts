@@ -6,19 +6,19 @@ import { AppComponent } from './app.component';
 import { LayoutModule } from './layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ActivityModule } from './activity/activity.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     LayoutModule,
     BrowserAnimationsModule,
-    ActivityModule
+    ActivityModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

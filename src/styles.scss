@@ -88,3 +88,8 @@ div.viewer-nav-content
 div.viewer-nav-content .mat-list-base {
   padding-top: 0;
 }
+
+.sidenav-inner-content router-outlet+* {
+  flex-grow: 1;
+  overflow: hidden;
+}

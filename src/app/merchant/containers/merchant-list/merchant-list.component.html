@@ -1,1 +1,63 @@
-<p>merchant-list works!</p>
+<!-- <div id="category-summary" class="category-list-summary" style="outline: none">
+  <div>
+    Angular Material offers a wide variety of UI components based on the
+    <a href="https://material.io/components">Material Design specification</a>
+  </div>
+</div> -->
+
+<div class="category-list-actions">
+  <div>
+    <button mat-raised-button color="primary" (click)="openEditModal('create')">
+      <mat-icon aria-hidden="false" aria-label="add icon">add</mat-icon>
+      新增店家
+    </button>
+  </div>
+</div>
+
+<div class="category-list">
+  <div *ngFor="let merchant of merchants$ | async" class="category-list-item">
+    <mat-card class="example-card" (click)="openEditModal('edit', merchant.id)">
+      <div
+        class="card-image"
+        mat-card-image
+        [ngStyle]="{
+          'background-image': 'url(' + merchant.logo + ')'
+        }"
+      ></div>
+
+      <mat-card-title>{{ merchant.name }}</mat-card-title>
+      <mat-card-subtitle>{{ merchant.adress }}</mat-card-subtitle>
+
+      <mat-card-content>
+        <div class="card-content-item">
+          <mat-icon aria-hidden="false" aria-label="add phone">phone</mat-icon>
+          <span class="card-item_text">{{ merchant.phone }}</span>
+        </div>
+        <div class="card-content-item">
+          <mat-icon aria-hidden="false" aria-label="add web">public</mat-icon>
+          <span class="card-item_text">
+            <a
+              [href]="merchant.website"
+              target="blank"
+              (click)="$event.stopPropagation()"
+              >網址</a
+            >
+          </span>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <!-- <button mat-button>編輯店家</button> -->
+        <button mat-stroked-button (click)="$event.stopPropagation()">
+          管理菜單
+        </button>
+        <button
+          mat-icon-button
+          class="card-delete-btn"
+          (click)="deleteMerchant(merchant.id)"
+        >
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>
