@@ -7,6 +7,8 @@ import { LayoutModule } from './layout';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ActivityModule } from './activity/activity.module';
 import { HttpClientModule } from '@angular/common/http';
+import { MenuModule } from './menu/menu.module';
+import { DishModule } from './dish/dish.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,6 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     LayoutModule,
     BrowserAnimationsModule,
     ActivityModule,
+    MenuModule,
+    DishModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

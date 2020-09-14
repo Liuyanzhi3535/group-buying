@@ -4,7 +4,7 @@
     <a href="https://material.io/components">Material Design specification</a>
   </div>
 </div> -->
-
+<!--
 <div class="category-list-actions">
   <div>
     <button mat-raised-button color="primary" (click)="openEditModal('create')">
@@ -12,7 +12,7 @@
       新增店家
     </button>
   </div>
-</div>
+</div> -->
 
 <div class="category-list">
   <div *ngFor="let merchant of merchants$ | async" class="category-list-item">
@@ -47,9 +47,13 @@
       </mat-card-content>
       <mat-card-actions>
         <!-- <button mat-button>編輯店家</button> -->
-        <button mat-stroked-button (click)="$event.stopPropagation()">
+        <a
+          mat-stroked-button
+          [routerLink]="['..','dish', merchant.id]"
+          (click)="$event.stopPropagation()"
+        >
           管理菜單
-        </button>
+        </a>
         <button
           mat-icon-button
           class="card-delete-btn"
@@ -60,4 +64,9 @@
       </mat-card-actions>
     </mat-card>
   </div>
+<div class="category-list-item add-button" (click)="openEditModal('create')">
+  <p>
+    ＋ 新增店家
+  </p>
+</div>
 </div>

@@ -15,6 +15,13 @@ const routes: Routes = [
           ),
       },
       {
+        path: 'dish/:merchantId',
+        loadChildren: () =>
+          import('./dish/dish-routing.module').then(
+            (mod) => mod.DishRoutingModule
+          ),
+      },
+      {
         path: 'activity',
         loadChildren: () =>
           import('./activity/activity.module').then(

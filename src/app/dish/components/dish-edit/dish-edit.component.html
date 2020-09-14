@@ -1,0 +1,73 @@
+<form #dishForm="ngForm" (ngSubmit)="saveData(model)">
+  <div>
+    <mat-form-field>
+      <mat-label>項目名稱</mat-label>
+      <input
+        matInput
+        required
+        [(ngModel)]="model.name"
+        name="name"
+        #name="ngModel"
+      />
+      <mat-error *ngIf="name.invalid">{{ "此欄位必填" }}</mat-error>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <mat-label>單價</mat-label>
+      <input
+        type="number"
+        matInput
+        required
+        [(ngModel)]="model.unitPrice"
+        name="adress"
+        #adress="ngModel"
+      />
+      <mat-error *ngIf="adress.invalid">{{ "此欄位必填" }}</mat-error>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <mat-label>描述</mat-label>
+      <input
+        matInput
+        required
+        [(ngModel)]="model.description"
+        name="phone"
+        #phone="ngModel"
+      />
+      <mat-error *ngIf="phone.invalid">{{ "此欄位必填" }}</mat-error>
+    </mat-form-field>
+  </div>
+  <!-- <div>
+    <mat-form-field>
+      <mat-label>圖片</mat-label>
+      <input
+        matInput
+        required
+        [(ngModel)]="model.image"
+        name="website"
+        #website="ngModel"
+      />
+      <mat-error *ngIf="website.invalid">{{ "此欄位必填" }}</mat-error>
+    </mat-form-field>
+  </div>
+  <div>
+    <mat-form-field>
+      <mat-label>分類</mat-label>
+      <input
+        matInput
+        required
+        [(ngModel)]="model.category"
+        name="logo"
+        #logo="ngModel"
+      />
+      <mat-error *ngIf="logo.invalid">{{ "此欄位必填" }}</mat-error>
+    </mat-form-field>
+  </div> -->
+  <div>
+    <button [disabled]="!dishForm.valid" mat-raised-button color="primary" >
+      儲存
+    </button>
+  </div>
+</form>

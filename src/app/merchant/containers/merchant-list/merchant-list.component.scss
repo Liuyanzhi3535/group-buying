@@ -41,12 +41,13 @@
   height: 150px;
 }
 
-.card-content-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 0.25rem;
+mat-card {
+  // display: flex;
+  // align-items: center;
+  // margin-bottom: 0.25rem;
+  cursor: pointer;
 
-  mat-icon {
+  .card-content-item mat-icon {
     font-size: 16px;
     height: 16px;
     width: 16px;
@@ -57,13 +58,34 @@
   }
 }
 
-// .card-delete-btn {
-//   font-size: 16px;
-//   height: 16px;
-//   width: 16px;
-// }
-
 mat-card-actions {
   display: flex;
   justify-content: space-between;
+
+  .card-delete-btn {
+    opacity: 0;
+    transition: 0.4s;
+  }
+}
+
+mat-card:hover mat-card-actions {
+  .card-delete-btn {
+    opacity: 1;
+  }
+}
+
+.add-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  height: 338px;
+  width: 280px;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
 }

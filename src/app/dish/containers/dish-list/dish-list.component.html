@@ -1,0 +1,33 @@
+<div class="back-action">
+  <a [routerLink]="['/merchant']"><< 回到商家清單</a>
+</div>
+<div class="row">
+  <div class="col-1-of-4">
+    <div class="content">
+      <mat-list>
+        <mat-list-item
+          routerLinkActive="active"
+          *ngFor="let item of items$ | async"
+          [routerLink]="['edit', item.id]"
+        >
+          {{ item.name }}
+          <button
+            mat-icon-button
+            class="delete-btn"
+            (click)="$event.stopPropagation(); deleteDish(item.id)"
+          >
+            <mat-icon>delete</mat-icon>
+          </button>
+        </mat-list-item>
+        <mat-list-item routerLinkActive="active" [routerLink]="['new']">
+          + 新增項目
+        </mat-list-item>
+      </mat-list>
+    </div>
+  </div>
+  <div class="col-3-of-4">
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

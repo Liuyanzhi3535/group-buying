@@ -1,0 +1,39 @@
+.content {
+  background-color: #fff;
+  padding: 1rem;
+}
+
+a {
+  color: #1976d2;
+  text-decoration: none;
+}
+
+.back-action {
+  padding: 1rem;
+}
+
+mat-list-item {
+  cursor: pointer;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.active {
+  background-color: #ddd;
+}
+
+mat-list-item:hover {
+  .delete-btn {
+    display: inline;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.delete-btn {
+  display: none;
+}

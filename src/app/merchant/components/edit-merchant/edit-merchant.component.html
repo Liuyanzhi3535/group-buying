@@ -71,6 +71,7 @@
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">取消</button>
   <button
+    [disabled]="!merchantForm.valid"
     mat-raised-button
     color="primary"
     [mat-dialog-close]="model"
