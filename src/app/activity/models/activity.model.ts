@@ -5,6 +5,7 @@ export class Activity {
     public id: string,
     public name: string,
     public description: string,
+    public status: 'planning'|'inProgress'|'finished',
     public initTime: number,
     public endTime: number,
     public merchantsInfo: {
