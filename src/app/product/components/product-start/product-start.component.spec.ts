@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DishEditComponent } from './dish-edit.component';
+import { ProductStartComponent } from './product-start.component';
 
-describe('DishEditComponent', () => {
-  let component: DishEditComponent;
-  let fixture: ComponentFixture<DishEditComponent>;
+describe('ProductStartComponent', () => {
+  let component: ProductStartComponent;
+  let fixture: ComponentFixture<ProductStartComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DishEditComponent ]
+      declarations: [ ProductStartComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DishEditComponent);
+    fixture = TestBed.createComponent(ProductStartComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,4 +1,4 @@
-<form #dishForm="ngForm" (ngSubmit)="saveData(model)">
+<form #productForm="ngForm" (ngSubmit)="saveData(model)">
   <div>
     <mat-form-field>
       <mat-label>項目名稱</mat-label>
@@ -66,7 +66,7 @@
     </mat-form-field>
   </div> -->
   <div>
-    <button [disabled]="!dishForm.valid" mat-raised-button color="primary" >
+    <button [disabled]="!productForm.valid" mat-raised-button color="primary" >
       儲存
     </button>
   </div>

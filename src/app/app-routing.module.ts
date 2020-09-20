@@ -15,10 +15,10 @@ const routes: Routes = [
           ),
       },
       {
-        path: 'dish/:merchantId',
+        path: 'product/:merchantId',
         loadChildren: () =>
-          import('./dish/dish-routing.module').then(
-            (mod) => mod.DishRoutingModule
+          import('./product/product.module').then(
+            (mod) => mod.ProductModule
           ),
       },
       {
