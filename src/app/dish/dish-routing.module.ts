@@ -8,6 +8,7 @@ const routes: Routes = [
   {
     path: '',
     component: DishListComponent,
+    data: { moduleName: '項目清單' },
     children: [
       { path: 'start', component: DishStartComponent },
       { path: 'new', component: DishEditComponent },

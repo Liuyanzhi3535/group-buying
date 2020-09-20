@@ -4,10 +4,13 @@
   </mat-sidenav> -->
   <mat-sidenav-content>
     <div class="sidenav-inner-content">
-      <app-header></app-header>
+      <app-header [headText]="moduleName"></app-header>
       <main class="sidenav-body-content">
         <app-sidenav></app-sidenav>
-        <router-outlet></router-outlet>
+        <router-outlet
+          #routerOutlet="outlet"
+          (activate)="setModuleName(routerOutlet)"
+        ></router-outlet>
       </main>
       <app-footer></app-footer>
     </div>

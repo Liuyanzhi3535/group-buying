@@ -6,6 +6,8 @@ const routes: Routes = [
   {
     path: '',
     component: ActivitiesComponent,
+    data: { moduleName: '團購活動' },
+
   },
 ];
 
