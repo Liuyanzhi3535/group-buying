@@ -49,6 +49,7 @@ export class ProductService {
   getProductById(id): Observable<Product> {
     return this.products$.pipe(map((val) => val.find((product) => product.id === id)));
   }
+
   createProduct(product) {
     let updatedpProducts = this.clonerService.deepClone(this.products$.getValue());
     updatedpProducts = [

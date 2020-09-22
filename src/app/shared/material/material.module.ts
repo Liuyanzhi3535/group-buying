@@ -9,6 +9,11 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [],
@@ -22,6 +27,11 @@ import { MatChipsModule } from '@angular/material/chips';
     MatFormFieldModule,
     MatInputModule,
     MatChipsModule,
+    MatTabsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatMenuModule,
   ],
   exports: [
     MatButtonModule,
@@ -33,6 +43,11 @@ import { MatChipsModule } from '@angular/material/chips';
     MatFormFieldModule,
     MatInputModule,
     MatChipsModule,
+    MatTabsModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatMenuModule,
   ],
 })
 export class MaterialModule {}
