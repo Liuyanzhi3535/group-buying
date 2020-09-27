@@ -1,0 +1,60 @@
+.container {
+  padding: 20px 50px;
+  flex-direction: column;
+}
+
+mat-accordion {
+  width: 100%;
+}
+
+mat-panel-title {
+  padding: 4px 0px;
+}
+
+a {
+  color: #1976d2;
+  text-decoration: none;
+}
+
+.back-action {
+  padding: 1rem;
+}
+
+.badage {
+  font-size: 12px;
+  padding: 4px 8px;
+  color: rgb(250, 250, 250);
+  background-color: #3f51b5;
+  border-radius: 50px;
+}
+
+.warning {
+  background-color: #ff4081;
+}
+
+table {
+  margin-top: 5px;
+  width: 100%;
+  box-shadow: none;
+}
+
+tr.mat-footer-row {
+  font-weight: bold;
+}
+
+.all-total-price {
+  margin-top: 15px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.mat-column-unitPrice {
+ width: 20%;
+}
+
+.mat-column-count {
+  width: 20%;
+}
+.mat-column-price {
+  width: 20%;
+}

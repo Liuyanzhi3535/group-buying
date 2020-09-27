@@ -26,7 +26,7 @@ export class ActivitiesService {
       ],
       orders: [
         {
-          participant: { id: '12', name: 'Amy' },
+          buyer: { id: '12', name: 'Amy' },
           items: [
             {
               itemId: '123',
@@ -61,7 +61,58 @@ export class ActivitiesService {
       ],
       orders: [
         {
-          participant: { id: '12', name: 'Amy' },
+          buyer: { id: '12', name: 'Amy' },
+          items: [
+            {
+              itemId: '123',
+              name: '特上紅茶',
+              description: '無',
+              unitPrice: 25,
+              category: '',
+              image: '',
+              customization: '',
+              count: 2,
+            },
+          ],
+          isPaid: false,
+          totalPrice: 50,
+        },
+        {
+          buyer: { id: '12', name: 'Amy' },
+          items: [
+            {
+              itemId: '123',
+              name: '特上紅茶',
+              description: '無',
+              unitPrice: 25,
+              category: '',
+              image: '',
+              customization: '',
+              count: 2,
+            },
+          ],
+          isPaid: false,
+          totalPrice: 50,
+        },
+        {
+          buyer: { id: '12', name: 'Amy' },
+          items: [
+            {
+              itemId: '123',
+              name: '特上紅茶',
+              description: '無',
+              unitPrice: 25,
+              category: '',
+              image: '',
+              customization: '',
+              count: 2,
+            },
+          ],
+          isPaid: false,
+          totalPrice: 50,
+        },
+        {
+          buyer: { id: '12', name: 'Amy' },
           items: [
             {
               itemId: '123',
@@ -96,7 +147,102 @@ export class ActivitiesService {
       ],
       orders: [
         {
-          participant: { id: '12', name: 'Amy' },
+          buyer: { id: '12', name: 'Hank' },
+          items: [
+            {
+              itemId: '123',
+              name: '奶茶',
+              description: '無',
+              unitPrice: 30,
+              category: '',
+              image: '',
+              customization: '',
+              count: 2,
+            },
+            {
+              itemId: '123',
+              name: '紅茶',
+              description: '無',
+              unitPrice: 25,
+              category: '',
+              image: '',
+              customization: '',
+              count: 2,
+            },
+          ],
+          isPaid: false,
+          totalPrice: 110,
+        },
+        {
+          buyer: { id: '12', name: 'Amy' },
+          items: [
+            {
+              itemId: '123',
+              name: '特上紅茶',
+              description: '無',
+              unitPrice: 25,
+              category: '',
+              image: '',
+              customization: '',
+              count: 2,
+            },
+          ],
+          isPaid: false,
+          totalPrice: 50,
+        },
+        {
+          buyer: { id: '12', name: 'Amy' },
+          items: [
+            {
+              itemId: '123',
+              name: '特上紅茶',
+              description: '無',
+              unitPrice: 25,
+              category: '',
+              image: '',
+              customization: '',
+              count: 2,
+            },
+          ],
+          isPaid: false,
+          totalPrice: 50,
+        },
+        {
+          buyer: { id: '12', name: 'Amy' },
+          items: [
+            {
+              itemId: '123',
+              name: '特上紅茶',
+              description: '無',
+              unitPrice: 25,
+              category: '',
+              image: '',
+              customization: '',
+              count: 2,
+            },
+          ],
+          isPaid: false,
+          totalPrice: 50,
+        },
+        {
+          buyer: { id: '12', name: 'Amy' },
+          items: [
+            {
+              itemId: '123',
+              name: '特上紅茶',
+              description: '無',
+              unitPrice: 25,
+              category: '',
+              image: '',
+              customization: '',
+              count: 2,
+            },
+          ],
+          isPaid: false,
+          totalPrice: 50,
+        },
+        {
+          buyer: { id: '12', name: 'Amy' },
           items: [
             {
               itemId: '123',
@@ -131,7 +277,7 @@ export class ActivitiesService {
       ],
       orders: [
         {
-          participant: { id: '12', name: 'Amy' },
+          buyer: { id: '12', name: 'Amy' },
           items: [
             {
               itemId: '123',
@@ -201,5 +347,11 @@ export class ActivitiesService {
       (activityData) => activityData.id !== activityId
     );
     this.activities$.next(updatedpActivities);
+  }
+
+  getOrderInfoByActivityId(activityId) {
+    return this.activities$.pipe(
+      map((val) => val.find((activity) => activity.id === activityId).orders)
+    );
   }
 }

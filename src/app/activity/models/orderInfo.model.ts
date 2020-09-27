@@ -1,6 +1,6 @@
 export class OrderInfo {
   constructor(
-    public participant: { id: string; name: string },
+    public buyer: { id: string; name: string },
     public items: {
       itemId: string;
       name: string;
@@ -13,5 +13,6 @@ export class OrderInfo {
     }[],
     public isPaid: boolean,
     public totalPrice: number
-  ) {}
+  ) {
+  }
 }

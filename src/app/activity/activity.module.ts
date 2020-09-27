@@ -6,6 +6,7 @@ import { ActivitiesComponent } from './containers/activities/activities.componen
 import { ActivityListComponent } from './components/activity-list/activity-list.component';
 import { ActivityEditComponent } from './containers/activity-edit/activity-edit.component';
 import { ActivityTabListComponent } from './containers/activity-tab-list/activity-tab-list.component';
+import { OrderInfoComponent } from './components/order-info/order-info.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { ActivityTabListComponent } from './containers/activity-tab-list/activit
     ActivityListComponent,
     ActivityEditComponent,
     ActivityTabListComponent,
+    OrderInfoComponent,
   ],
   imports: [ActivityRoutingModule, SharedModule],
 })

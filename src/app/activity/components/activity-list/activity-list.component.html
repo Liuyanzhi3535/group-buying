@@ -57,13 +57,13 @@
           <mat-icon>more_vert</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
-          <button *ngIf="status !== 'planning'" mat-menu-item>
-            <mat-icon>format_list_bulleted</mat-icon>
-            <span>訂購名單</span>
-          </button>
           <button mat-menu-item (click)="openEditModal('edit', row.id)">
             <mat-icon>more_horiz</mat-icon>
             <span>活動細節</span>
+          </button>
+          <button *ngIf="status !== 'planning'" mat-menu-item [routerLink]="['../', 'order-info', row.id]">
+            <mat-icon>format_list_bulleted</mat-icon>
+            <span>訂購名單</span>
           </button>
           <button mat-menu-item (click)="this.deleteItme.next(row.id)">
             <mat-icon>delete</mat-icon>

@@ -18,7 +18,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core';
     BrowserAnimationsModule,
   ],
   providers: [
-    {provide: MAT_DATE_LOCALE, useValue: 'zh-TW'},
+    { provide: MAT_DATE_LOCALE, useValue: 'zh-TW' },
   ],
   bootstrap: [AppComponent],
 })
