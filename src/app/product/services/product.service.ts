@@ -56,7 +56,6 @@ export class ProductService {
       ...updatedpProducts,
       { ...product, id: (+new Date() + Math.random()).toString() },
     ];
-    console.log(updatedpProducts);
     this.products$.next(updatedpProducts);
   }
 

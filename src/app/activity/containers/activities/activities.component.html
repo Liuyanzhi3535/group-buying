@@ -1,19 +1,4 @@
-<div class="container">
-  <mat-tab-group animationDuration="0ms">
-    <mat-tab label="規劃中"
-      ><app-activity-list
-        [activities]="planningActs$ | async"
-      ></app-activity-list
-    ></mat-tab>
-    <mat-tab label="進行中"
-      ><app-activity-list
-        [activities]="inProgressActs$ | async"
-      ></app-activity-list
-    ></mat-tab>
-    <mat-tab label="已結束"
-      ><app-activity-list
-        [activities]="finishedActs$ | async"
-      ></app-activity-list
-    ></mat-tab>
-  </mat-tab-group>
-</div>
+<!-- <div style="display: flex;justify-content: flex-end;">
+  <button mat-raised-button color="primary" (click)="openEditModal('new')">新增活動</button>
+</div> -->
+<router-outlet></router-outlet>

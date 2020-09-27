@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { map } from 'rxjs/operators';
+import { ClonerService } from 'src/app/core/services/cloner.service';
 import { Activity } from '../models/activity.model';
 
 @Injectable({
@@ -17,6 +18,7 @@ export class ActivitiesService {
       endTime: 1600615937575,
       merchantsInfo: [
         {
+          id: '1',
           name: 'Coco',
           logo:
             'https://tryworks.jp/wp/wp-content/uploads/2020/03/7875d2b8042b9311ba2065016a1afe67.jpg',
@@ -51,6 +53,7 @@ export class ActivitiesService {
       endTime: 1600615937575,
       merchantsInfo: [
         {
+          id: '1',
           name: 'Coco',
           logo:
             'https://tryworks.jp/wp/wp-content/uploads/2020/03/7875d2b8042b9311ba2065016a1afe67.jpg',
@@ -85,6 +88,7 @@ export class ActivitiesService {
       endTime: 1600615937575,
       merchantsInfo: [
         {
+          id: '1',
           name: 'Coco',
           logo:
             'https://tryworks.jp/wp/wp-content/uploads/2020/03/7875d2b8042b9311ba2065016a1afe67.jpg',
@@ -119,6 +123,7 @@ export class ActivitiesService {
       endTime: 1600615937575,
       merchantsInfo: [
         {
+          id: '1',
           name: 'Coco',
           logo:
             'https://tryworks.jp/wp/wp-content/uploads/2020/03/7875d2b8042b9311ba2065016a1afe67.jpg',
@@ -145,7 +150,7 @@ export class ActivitiesService {
       ],
     },
   ]);
-  constructor() {}
+  constructor(private clonerService: ClonerService) {}
 
   fetchActivities() {}
 
@@ -160,11 +165,41 @@ export class ActivitiesService {
     );
   }
 
-  getActivityBtId() {}
+  getActivityBtId(id) {
+    return this.activities$.pipe(
+      map((val) => val.find((activity) => activity.id === id))
+    );
+  }
 
-  createActivity() {}
+  createActivity(activity) {
+    let updatedpActivities = this.clonerService.deepClone(
+      this.activities$.getValue()
+    );
+    updatedpActivities = [
+      ...updatedpActivities,
+      { ...activity, id: (+new Date() + Math.random()).toString() },
+    ];
+    this.activities$.next(updatedpActivities);
+  }
 
-  updateActivity() {}
+  updateActivity(activity) {
+    const updatedpActivities = this.clonerService.deepClone(
+      this.activities$.getValue()
+    );
+    const activityIndex = updatedpActivities.findIndex(
+      (activityData) => activityData.id === activity.id
+    );
+    updatedpActivities[activityIndex] = activity;
+    this.activities$.next(updatedpActivities);
+  }
 
-  deleteActivity() {}
+  deleteActivity(activityId) {
+    let updatedpActivities = this.clonerService.deepClone(
+      this.activities$.getValue()
+    );
+    updatedpActivities = updatedpActivities.filter(
+      (activityData) => activityData.id !== activityId
+    );
+    this.activities$.next(updatedpActivities);
+  }
 }

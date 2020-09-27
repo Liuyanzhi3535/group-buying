@@ -94,7 +94,6 @@ export class MerchantsService {
       ...updatedMerchants,
       { ...merchant, id: (+new Date() + Math.random()).toString() },
     ];
-    console.log(updatedMerchants);
     this.merchants$.next(updatedMerchants);
   }
 
@@ -113,7 +112,9 @@ export class MerchantsService {
     let updatedMerchants = this.clonerService.deepClone(
       this.merchants$.getValue()
     );
-    updatedMerchants = updatedMerchants.filter(merchantData => merchantData.id !== merchantId);
+    updatedMerchants = updatedMerchants.filter(
+      (merchantData) => merchantData.id !== merchantId
+    );
     this.merchants$.next(updatedMerchants);
   }
 }
